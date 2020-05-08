@@ -62,5 +62,5 @@ if($db_connection->errno){
 $db_connection->close();
 
 //Queda 3 segundo para ver resultados y luego vuelve al formulario
-header("Location: trans_index.html");
+header("Location: index.html");
 
