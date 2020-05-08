@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>FORMULARIO INTRO TARIFAS</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="generator" content="" />
+	<!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+	<h1>FORMULARIO INTRO TARIFAS SQL</h1>
+	<form action="conexSQL.php" method="post">
+	<label for=""> PRECIO
+	<input type="number"name="precio" id="precio" step="0.01" value="precio"  placeholder="precio"> 
+	</label><br>
+	<label for=""> PESO
+	<input type="number" name="peso" id="peso" value="peso" placeholder="peso">
+	</label><br>
+	<label for=""> CODIGO AGENCIA
+	<input type="number" name="agencia_id" id="agencia_id" value="agencia_id" placeholder="DHL/1-SEUR/2">
+	</label><br>
+	<!-- <input type="text" name="agencia_nom" id="agencia_nom" value= "agencia_nom"placeholder="AGENCIA"> -->
+	<label for=""> CODIGO ZONA
+	<input type="number" name="zona_id" id="zona_id" value="zona_id" placeholder="ZONA">
+	</label><br>
+	<!-- <input type="text" name="zona_nom" id="zona_nom" value= "zona_nom" placeholder="ZONA ?"> -->
+	<button type="submit">Enviar</button>
+	</form>
+</body>
+
+</html>
