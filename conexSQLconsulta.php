@@ -1,4 +1,5 @@
 <?php
+include 'calc_peso.php';
 
 $db_host="localhost";
 $db_user="dhpm";
@@ -12,7 +13,8 @@ $db_connection = new mysqli("$db_host", "$db_user", "$db_password","$db_name");
 
 
 //variables datos index
-$subs_peso =($_GET['peso']);
+$subs_peso1 =($_GET['peso']);
+$subs_peso = peso ($subs_peso1); // lo paso por la calculadora peso
 $subs_nom_prov=($_GET['nom_prov']);
 
 //conexion consulta SELECT para que no se cargen 2 iguales
@@ -20,12 +22,14 @@ if($db_connection->errno){
    die ('hubo error');
 }else{
 
+   echo '<a href= index.html>volver al formulario </a><br><br><br>';
+   
    $resultado =$db_connection->query("SELECT * FROM $db_table_name NATURAL JOIN $db_table_name2 
    WHERE peso ='$subs_peso'AND nom_prov ='$subs_nom_prov'"); 
 
    if ($resultado->num_rows){
       while ($fila = $resultado->fetch_assoc()){
-      echo $fila ['precio']," ", $fila ['peso']," ", $fila ['nom_prov']," ", $fila ['agencia_nom'], '<br>';
+      echo '<h1>',$fila ['precio']," - ", $fila ['peso'],"- ", $fila ['nom_prov'],"- ",$fila ['agencia_nom'],'</h1><br>';
       }
 
    } else{
@@ -34,4 +38,6 @@ if($db_connection->errno){
     }   
 }
 $db_connection->close();
+
+
 
