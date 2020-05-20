@@ -22,7 +22,7 @@ if($db_connection->errno){
    die ('hubo error');
 }else{
 
-   echo '<a href= form.html>volver al formulario </a><br><br><br>';
+   echo '<a href= bultos.html>volver al formulario </a><br><br><br>';
    
    $resultado =$db_connection->query("SELECT * FROM $db_table_name NATURAL JOIN $db_table_name2 
    WHERE peso ='$subs_peso'AND nom_prov ='$subs_nom_prov'"); 
