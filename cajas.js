@@ -75,10 +75,10 @@ function obtenerDatos() {
 }  
 
 function borrarBulto() {
-        var n = document.getElementById("borrar").value;
-        n=parseInt(n);
-        var aborrar = n-1;
-    
+        var n = parseInt(prompt ("introduce ID",0));
+        // var n = (document.getElementById("borrar").value)-1;
+        // n=parseInt(n);
+        var aborrar = n-1;   
         paquetes.splice(aborrar,1);
 
         // obtenerDatos(); investigar como acceder solo a la funcion mostrar listado        
@@ -96,5 +96,23 @@ function borrarBulto() {
             }
             document.getElementById('listado').innerText = lista;
           }
-          mostrarListado();
+        mostrarListado();
+          function sumarPeso1() {
+            var totalesPeso = 0;
+            for (let p = 0; p < paquetes.length; p++) {
+                totalesPeso +=paquetes[p].pesoV1;   
+            }
+            document.getElementById('totales').innerText = 'pesoDHL:'+totalesPeso.toFixed(2);
+        }  
+        sumarPeso1();
+    
+        function sumarPeso2() {
+            var totalesPeso2 = 0;
+            for (let p = 0; p < paquetes.length; p++) {
+                totalesPeso2 +=paquetes[p].pesoV2;   
+            }
+            document.getElementById('totales2').innerText = 'pesoSEUR: '+totalesPeso2.toFixed(2);
+        }  
+        sumarPeso2();
+    
     }
