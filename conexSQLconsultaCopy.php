@@ -15,17 +15,17 @@ $db_connection = new mysqli("$db_host", "$db_user", "$db_password","$db_name");
 //variables datos index
 $subs_peso1 =($_GET['peso']);
 $subs_peso = peso ($subs_peso1); // lo paso por la calculadora peso
-$subs_nom_prov=($_GET['nom_prov']);
+$subs_cod_prov=($_GET['cod_prov']); 
 
 //conexion consulta SELECT para que no se cargen 2 iguales
 if($db_connection->errno){
    die ('hubo error');
 }else{
 
-   echo '<a href= form.html>volver al formulario </a><br><br><br>';
+   echo '<a href= bultos.html>volver al formulario </a><br><br><br>';
    
    $resultado =$db_connection->query("SELECT * FROM $db_table_name NATURAL JOIN $db_table_name2 
-   WHERE peso ='$subs_peso'AND nom_prov ='$subs_nom_prov'"); 
+   WHERE peso ='$subs_peso'AND cod_prov_id ='$subs_cod_prov'"); 
 
    if ($resultado->num_rows){
       while ($fila = $resultado->fetch_assoc()){
